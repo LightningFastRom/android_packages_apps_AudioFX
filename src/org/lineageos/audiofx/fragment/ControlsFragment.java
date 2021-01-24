@@ -116,7 +116,7 @@ public class ControlsFragment extends AudioFxBaseFragment {
     }
 
     private void updateSwitchColor(Switch view, int color) {
-        ColorStateList thumbStates = new ColorStateList(
+        ColorStateList trackStates = new ColorStateList(
                 new int[][] {
                     new int[] { -android.R.attr.state_enabled },
                     new int[] { android.R.attr.state_checked },
@@ -129,22 +129,7 @@ public class ControlsFragment extends AudioFxBaseFragment {
                 }
         );
 
-        ColorStateList trackStates = new ColorStateList(
-                new int[][] {
-                    new int[] { -android.R.attr.state_enabled },
-                    new int[] { android.R.attr.state_checked },
-                    new int[] {}
-                },
-                new int[] {
-                    color,
-                    color,
-                    Color.GRAY
-                }
-        );
-
-        view.setThumbTintList(thumbStates);
         view.setTrackTintList(trackStates);
-        view.setTrackTintMode(PorterDuff.Mode.OVERLAY);
         view.invalidate();
     }
 
